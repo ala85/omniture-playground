@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/api.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/ladda-themeless.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="js/spin.min.js"></script>
+    <script src="js/ladda.min.js"></script>
+    <script src="client.js"></script>
+</head>
+<body>
+
+<section class="container">
+    <h1>Adobe Omniture API Demo</h1>
+    First, we need to retrieve the correct data center API to call, as this changes from client to client. This is retrieved the username/client secret default fake couple
+    "foo"/"bar" and the company name, which retrieve the following <strong>API URL</strong>, that should be used to make all requests.
+    </br>
+    </br>
+
+
+    <div class="row client-secret_section">
+        <h2>1. Find API URL</h2>
+        <div class="row">
+            <div class="col-md-12">
+                To start making API calls to client site, we need to find their API url endpoint
+            </div>
+        </div>
+        </br>
+        <div class="row">
+            <div class="col-md-6">
+                <form class="api-url-form">
+                    <div class="form-group">
+                        <label for="company-field">Company</label>
+                        <input type="text" class="form-control" id="company-field" placeholder="Company Name" value="cdegroot">
+                    </div>
+                    <button id="company-get-endpoint-button" class="btn btn-info pull-right" type="submit" data-style="expand-right"><span class="ladda-label">Get API URL</span></button>
+                </form>
+            </div>
+            <div class="col-md-6 api-url-result">
+                <h4>Result:  <strong><span class="api-url-value"/> </strong></h4>
+            </div>
+        </div>
+    </div>
+</section>
+
+<hr>
+
+<section class="demo-section container">
+    <div class="row section client-secret-section">
+        <h2>2. Find Client Secret</h2>
+        <div class="row">
+            <div class="col-md-12">
+                We have found the API URL. To start making Data API calls we need a client secret, which can be obtained in two ways:
+
+                <ol>
+                    <li>Client provides username (e.g - <strong>zmags_01:cdegroot</strong>) and client secret,then we can make API calls</li>
+                    <li>Client provides username (e.g - <strong>zmags_01:cdegroot</strong>) and its MarkeltCloud password, then we need to find the client secret, as shown below:</li>
+                </ol>
+            </div>
+        </div>
+        </br>
+        <div class="row">
+            <div class="col-md-6">
+                2) Client Provides his login to <a href="https://sc.omniture.com/login/" target="_blank">Analytics</a>, then we can find a client secret.
+                <form class="client-secret-form form-inline">
+                    <div class="form-group">
+                        <label for="login-field">Login</label>
+                        <input type="text" class="form-control field" id="login-field" placeholder="Login to connect to MarketCloud"  />
+                    </div>
+                    <div class="form-group">
+                        <label for="password-field">Password</label>
+                        <input type="password" class="form-control field" id="password-field" placeholder="Password to connect to MarketCloud" />
+                    </div>
+                    <button id="company-get-login-key-button" class="btn btn-info pull-right">Company.GetLoginKey</button>
+                </form>
+            </div>
+            <div class="col-md-6 client-secret-result">
+                <h4>Result:  <strong><span class="client-secret-value"></span></strong></h4>
+            </div>
+
+        </div>
+    </div>
+    </br>
+
+    <div class="row section report-suite-section">
+        <h2>3. Find Report Suites</h2>
+        <div class="row">
+            <div class="col-md-6">
+                Now that we have the client secret, we can make API calls to find a report suite.
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 report-suite-section">
+                <form class="report-suite-form">
+                    <div class="form-group">
+                        <label for="report-suite-field">RS ID</label>
+                        <input type="text" class="form-control" id="report-suite-field" placeholder="Report Suite ID" value="cdgzmag01">
+                    </div>
+                    <button id="company-get-report-suites-button" class="btn btn-info pull-right">Company.GetReportSuites</button>
+                </form>
+            </div>
+
+            <div class="col-md-6 report-suite-result">
+                <h4>Result: <strong><span class="company-get-report-suites-result"></span></strong></h4>
+            </div>
+        </div>
+    </div>
+    </br>
+    </hr>
+    <div class="row section variables-section">
+        <h2>4. Find Variables in Report Suite</h2>
+        <div class="row">
+            <div class="col-md-12">
+                Now that we have chosen a report suite, we can find all variables (props, eVars).
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 variables-section">
+                <form class="variables-form">
+                    <div class="form-group">
+                        <label for="rsid-field">RS ID</label>
+                        <input type="text" class="form-control" id="rsid-field" placeholder="Report Suite ID" value="cdgzmag01">
+                    </div>
+                    <button id="report-get-elements-button" class="btn btn-info pull-right">Report.GetElements</button>
+                </form>
+            </div>
+            <div class="col-md-6 variables-result">
+                <h4>Result: <strong><span class="report-get-elements-result"></span></strong></h4>
+            </div>
+        </div>
+    </div>
+    </br>
+    </hr>
+    <div class="row section other-section">
+        <h2>5. Now explore other API</h2>
+        <div class="row">
+            <div class="col-md-12">
+                Go to the <a href="https://marketing.adobe.com/developer/api-explorer"> API Explorer </a> to find out more API..
+            </div>
+        </div>
+    </div>
+
+</section>
+</body>
+</html>

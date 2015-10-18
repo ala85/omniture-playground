@@ -1,0 +1,18 @@
+.section {
+    margin: 10px;
+}
+
+.field {
+    width: 225px !important;
+}
+
+.report-suite-result,
+.api-url-result {
+    margin-top: 48px;
+}
+.client-secret-result {
+    margin-top: 40px;
+}
+#company-get-login-key-button {
+    margin: 10px 0 0 10px;
+}
