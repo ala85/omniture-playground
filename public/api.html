@@ -13,18 +13,17 @@
 <body>
 
 <section class="container">
-    <h1>Adobe Omniture API Demo</h1>
-    First, we need to retrieve the correct data center API to call, as this changes from client to client. This is retrieved the username/client secret default fake couple
-    "foo"/"bar" and the company name, which retrieve the following <strong>API URL</strong>, that should be used to make all requests.
-    </br>
-    </br>
-
+    <div class="jumbotron">
+        <h1>Adobe Omniture API Demo</h1>
+        <p>This is a demo page for testing out simple Omniture API calls. </p>
+        <p>First step is to retrieve the correct data center API to call, as this changes from client to client. </p>
+    </div>
 
     <div class="row client-secret_section">
         <h2>1. Find API URL</h2>
         <div class="row">
             <div class="col-md-12">
-                To start making API calls to client site, we need to find their API url endpoint
+                To start making API calls to client site, we need to find their API url endpoint (we use fake user foo/bar)
             </div>
         </div>
         </br>
@@ -63,7 +62,7 @@
         </br>
         <div class="row">
             <div class="col-md-6">
-                2) Client Provides his login to <a href="https://sc.omniture.com/login/" target="_blank">Analytics</a>, then we can find a client secret.
+                Client Provides his login to <a href="https://sc.omniture.com/login/" target="_blank">Analytics</a>, then we can find a client secret.
                 <form class="client-secret-form form-inline">
                     <div class="form-group">
                         <label for="login-field">Login</label>
