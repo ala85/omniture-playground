@@ -13,17 +13,17 @@
 <body>
 
 <section class="container">
-    <div class="jumbotron">
+    <div class="page-header jumbotron">
         <h1>Adobe Omniture API Demo</h1>
-        <p>This is a demo page for testing out simple Omniture API calls. </p>
-        <p>First step is to retrieve the correct data center API to call, as this changes from client to client. </p>
+        <p>This is a demo page for testing out simple Omniture API calls.</p>
+
     </div>
 
     <div class="row client-secret_section">
         <h2>1. Find API URL</h2>
         <div class="row">
             <div class="col-md-12">
-                To start making API calls to client site, we need to find their API url endpoint (we use fake user foo/bar)
+                To start making API calls to client site, we need to find their API url endpoint (we use fake unauthenticated user foo/bar)
             </div>
         </div>
         </br>
@@ -102,7 +102,7 @@
             </div>
 
             <div class="col-md-6 report-suite-result">
-                <h4>Result: <strong><span class="company-get-report-suites-result"></span></strong></h4>
+                <h4>Result:</h4> <b><span class="company-get-report-suites-result"></span></b>
             </div>
         </div>
     </div>
@@ -119,8 +119,8 @@
             <div class="col-md-6 variables-section">
                 <form class="variables-form">
                     <div class="form-group">
-                        <label for="rsid-field">RS ID</label>
-                        <input type="text" class="form-control" id="rsid-field" placeholder="Report Suite ID" />
+                        <label for="rsid-variables-field">RS ID</label>
+                        <input type="text" class="form-control" id="rsid-variables-field" placeholder="Report Suite ID" />
                     </div>
                     <button id="report-get-elements-button" class="btn btn-info pull-right">Report.GetElements</button>
                 </form>

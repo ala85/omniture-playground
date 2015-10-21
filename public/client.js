@@ -73,7 +73,7 @@ $( document ).ready(function() {
             method: "POST",
             data: {
                 apiURL: window.api_url,
-                sp: $("#rsid-field").val(),
+                sp: $("#report-suite-field").val(),
                 username: window.username,
                 secret: window.client_secret
             }
@@ -91,8 +91,10 @@ $( document ).ready(function() {
     function getVariables() {
         return $.ajax({
             url: API + "/variables?method=Report.GetElements",
+            method: "POST",
             data: {
-                reportSuiteID: $("#rsid-field").val(),
+                apiURL: window.api_url,
+                reportSuiteID: $("#report-suite-field").val(),
                 username: window.username,
                 secret: window.client_secret
             }

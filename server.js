@@ -1,5 +1,6 @@
 var express = require('express'),
     request = require('request'),
+    cors = require('cors'),
     wsse = require('./public/js/wsse.js');
 
 
@@ -7,6 +8,7 @@ var express = require('express'),
 var DEFAULT_API_URL = "https://api.omniture.com/admin/1.4/rest/";
 
 var app = express();
+app.use(cors());
 app.use('/', express.static(__dirname + '/public'));
 
 var bodyParser = require('body-parser')
@@ -81,7 +83,7 @@ app.post('/api/variables', function(req, res) {
 
     var method = req.query.method,
         apiURL = req.body.apiURL,
-        rsid = req.query.reportSuiteID,
+        rsid = req.body.reportSuiteID,
         username = req.body.username,
         secret = req.body.secret;
 
