@@ -1,5 +1,6 @@
 var express = require('express'),
     request = require('request'),
+    bodyParser = require('body-parser') ,
     cors = require('cors'),
     wsse = require('./public/js/wsse.js');
 
@@ -11,7 +12,7 @@ var app = express();
 app.use(cors());
 app.use('/', express.static(__dirname + '/public'));
 
-var bodyParser = require('body-parser')
+
 app.use( bodyParser.json() );       // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
     extended: true

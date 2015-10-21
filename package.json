@@ -1,0 +1,14 @@
+{
+  "name": "omniture-playground",
+  "version": "0.0.1",
+  "description": "Demo site for Adobe Omniture API samples",
+  "main": "server.js",
+  "author": "ala",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "express": "~4.13.3",
+    "cors": "~2.7.1",
+    "request": "~2.65.0",
+    "body-parser": "~1.14.1"
+  }
+}
