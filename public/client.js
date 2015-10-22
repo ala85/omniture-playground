@@ -5,6 +5,7 @@ $( document ).ready(function() {
     formMap.set(".client-secret-form", getLoginKey);
     formMap.set(".report-suite-form", getReportSuites);
     formMap.set(".variables-form", getVariables);
+    formMap.set(".events-form", getEvents);
 
     var API = "http://127.0.0.1:3002/api";
 
@@ -13,8 +14,10 @@ $( document ).ready(function() {
     $(".client-secret-result").hide();
     $(".report-suite-result").hide();
     $(".variables-result").hide();
+    $(".events-result").hide();
     $(".report-suite-section").hide();
     $(".variables-section").hide();
+    $(".events-section").hide();
     $(".other-section").hide();
 
     Ladda.bind( 'button[type=submit]' );
@@ -105,9 +108,31 @@ $( document ).ready(function() {
             })
 
             $(".variables-result").show();
-            $(".other-section").show();
+            $(".events-section").show();
         });
     }
+
+    function getEvents() {
+        return $.ajax({
+            url: API + "/variables?method=Report.GetMetrics",
+            method: "POST",
+            data: {
+                apiURL: window.api_url,
+                reportSuiteID: $("#report-suite-field").val(),
+                username: window.username,
+                secret: window.client_secret
+            }
+        })
+            .done(function( data ) {
+                data.result.forEach(function(report, index) {
+                    $(".report-get-events-result").append((index+1) + ") " + report.id + " - " + report.name + "<br>");
+                })
+
+                $(".events-result").show();
+                $(".other-section").show();
+            });
+    }
+
 
     function handleSubmission ($button, callback) {
         var l = Ladda.create($button[0]);
@@ -131,6 +156,7 @@ $( document ).ready(function() {
     setupSubmission(".client-secret-form");
     setupSubmission(".report-suite-form");
     setupSubmission(".variables-form");
+    setupSubmission(".events-form");
 });
 
 

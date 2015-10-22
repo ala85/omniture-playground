@@ -66,7 +66,7 @@
                 <form class="client-secret-form form-inline">
                     <div class="form-group">
                         <label for="login-field">Login</label>
-                        <input type="text" class="form-control field" id="login-field" placeholder="Login to MarketCloud"  />
+                        <input type="text" class="form-control field" id="login-field" placeholder="Login to MarketCloud" value="zmags_01" />
                     </div>
                     <div class="form-group">
                         <label for="password-field">Password</label>
@@ -102,7 +102,7 @@
             </div>
 
             <div class="col-md-6 report-suite-result">
-                <h4>Result:</h4> <b><span class="company-get-report-suites-result"></span></b>
+                <h4>Result:<b><span class="company-get-report-suites-result"></span></b></h4>
             </div>
         </div>
     </div>
@@ -131,9 +131,31 @@
         </div>
     </div>
     </br>
-    </hr>
+    <div class="row section events-section">
+        <h2>5. Find Events in Report Suite</h2>
+        <div class="row">
+            <div class="col-md-12">
+                To find events, you need to call another endpoint: Report.GeMetrics.
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 events-section">
+                <form class="events-form">
+                    <div class="form-group">
+                        <label for="rsid-events-field">RS ID</label>
+                        <input type="text" class="form-control" id="rsid-events-field" placeholder="Report Suite ID" />
+                    </div>
+                    <button id="report-get-metrics-button" class="btn btn-info pull-right">Report.GetMetrics</button>
+                </form>
+            </div>
+            <div class="col-md-6 events-result">
+                <h4>Result: <strong><span class="report-get-events-result"></span></strong></h4>
+            </div>
+        </div>
+    </div>
+    </br>
     <div class="row section other-section">
-        <h2>5. Now explore other API</h2>
+        <h2>6. Now explore other API</h2>
         <div class="row">
             <div class="col-md-12">
                 Go to the <a href="https://marketing.adobe.com/developer/api-explorer"> API Explorer </a> to find out more API..
